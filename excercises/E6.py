@@ -19,12 +19,18 @@ def main():
 
     my_dict = {
       'Course': 'P4NE',
-      'Instructor': 'Kirk Byers'
+      'Instructor': 'Kirk Byers',
+      'Student': 'Victor Palacio',
+      'Month': 'April',
+      'Year': '2016',
+      'Motto': 'Bring the P4NE!'
     }
 
     my_list = [
       'Python for Network Engineers',
-      my_dict
+      my_dict,
+      'Excited',
+      'Yeah!'
     ]
 
     with open("E6.yml", "w") as f:
