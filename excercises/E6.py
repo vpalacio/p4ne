@@ -28,6 +28,8 @@ def main():
 
     my_list = [
       'Python for Network Engineers',
+      100,
+      200,
       my_dict,
       'Excited',
       'Yeah!'

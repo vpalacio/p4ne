@@ -3,7 +3,7 @@
 '''
 Python for Network Engineers: P4NE - Bring it!
 
-Excercise 6
+Excercise 7
 '''
 
 import yaml
@@ -27,6 +27,8 @@ def main():
 
     with open(json_file) as f:
         new_json = json.load(f)
+
+    print new_yml
 
     pprint(new_yml)
 
