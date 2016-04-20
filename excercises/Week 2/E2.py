@@ -26,8 +26,10 @@ def main():
 	remote_conn = telnetlib.Telnet(ip_addr, TELNET_PORT, TELNET_TIMEOUT)
 	output = remote_conn.read_until("sername:", TELNET_TIMEOUT)
 	remote_conn.write( username + '\n')
+	print output
 	output = remote_conn.read_until("assword:", TELNET_TIMEOUT)
 	remote_conn.write( password + '\n')
+	print output
 	output = remote_conn.read_very_eager()
 	remote_conn.write( command1 + '\n')
 	remote_conn.write( command2 + '\n')
