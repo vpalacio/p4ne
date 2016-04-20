@@ -12,16 +12,15 @@ __license__ = "GPL"
 __version__ = "1.0"
 __email__ = "Github - @vpalacio"
 
-ip_addr = '50.76.53.27'
 TELNET_PORT = 23
 TELNET_TIMEOUT = 6
 
 
 def main():
 
+	ip_addr = '50.76.53.27'
 	remote_conn = telnetlib.Telnet(ip_addr, TELNET_PORT, TELNET_TIMEOUT)
 	output = remote_conn.read_until("sername:", TELNET_TIMEOUT)
-	output = remote_conn.read_very_eager()
 	print output
 	remote_conn.close()
 
