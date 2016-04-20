@@ -20,7 +20,8 @@ TELNET_TIMEOUT = 6
 def main():
 
 	remote_conn = telnetlib.Telnet(ip_addr, TELNET_PORT, TELNET_TIMEOUT)
-	remote_conn.read_until("sername", TELNET_TIMEOUT)
+	output = remote_conn.read_until("sername", TELNET_TIMEOUT)
+	print output
 	remote_conn.read_very_eager()
 	print remote_conn
 	# remote_conn.write(<command> + '\n')
