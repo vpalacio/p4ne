@@ -23,17 +23,12 @@ def main():
 	password = '88newclass'
 	command1 = 'terminal length 0'
 	command2 = 'show ip int brief'
+
 	remote_conn = telnetlib.Telnet(ip_addr, TELNET_PORT, TELNET_TIMEOUT)
 	output = remote_conn.read_until("sername:", TELNET_TIMEOUT)
 	remote_conn.write( username + '\n')
-	output = remote_conn.read_very_eager()
-	print output
-	output = remote_conn.read_until("assword:", TELNET_TIMEOUT)
+	output = remote_conn.read_until("ssword:", TELNET_TIMEOUT)
 	remote_conn.write( password + '\n')
-	output = remote_conn.read_very_eager()
-	print output
-	remote_conn.write( command1 + '\n')
-	remote_conn.write( command2 + '\n')
 	output = remote_conn.read_very_eager()
 	print output
 
