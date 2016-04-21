@@ -6,6 +6,7 @@ Python for Network Engineers: P4NE - Bring it!
 Excercise 2A
 '''
 import telnetlib
+import time
 
 __author__ = "Victor Palacio"
 __license__ = "GPL"
@@ -23,12 +24,13 @@ def main():
 	password = '88newclass'
 	command1 = 'terminal length 0'
 	command2 = 'show ip int brief'
-
+	time.sleep(1)
 	remote_conn = telnetlib.Telnet(ip_addr, TELNET_PORT, TELNET_TIMEOUT)
 	output = remote_conn.read_until("sername:", TELNET_TIMEOUT)
 	remote_conn.write( username + '\n')
 	output = remote_conn.read_until("ssword:", TELNET_TIMEOUT)
 	remote_conn.write( password + '\n')
+
 	output = remote_conn.read_very_eager()
 	print output
 
