@@ -1,0 +1,4 @@
+---
+- name: Generate configuration file
+  template: src=switch1.j2 dest=/home/vpalacio/p4ne/excercises/Week_5/excercise3/configs/{{item.hostname}}.txt
+  with_items: switch_vars

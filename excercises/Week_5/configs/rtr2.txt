@@ -27,6 +27,7 @@ interface Vlan1
 ip default-gateway 1.1.1.100
 snmp-server community not_public RO 
 !
+!
 line con 0
 line vty 0 4
  login
