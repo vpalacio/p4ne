@@ -1,0 +1,17 @@
+---
+
+- name: Configure Vlans
+  hosts: arista
+    
+  tasks:
+   - name: Create vlans
+     eos_vlan: name={{ item.vlan_name }} vlanid={{ item.vlanid }}
+          username={{ eapi_username }}
+          host={{ eapi_hostname }}
+          password={{ eapi_password }}
+          port={{ eapi_port }}
+          transport=https
+     with_items: 
+          - {vlan_name: RED, vlanid: 567}
+          - {vlan_name: WHITE, vlanid:  678}
+          - {vlan_name: BLUE, vlanid : 789}
