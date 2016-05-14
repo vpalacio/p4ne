@@ -1,0 +1,13 @@
+---
+
+- name: create trunk interface
+  hosts: arista
+
+  tasks:
+    - name: configure trunk
+      eos_switchport: name=Ethernet6 mode=trunk trunk_native_vlan=1 trunk_allowed_vlans=567,678,789 
+          username={{ eapi_username }}
+          host={{ eapi_hostname }}
+          password={{ eapi_password }}
+          port={{ eapi_port }}
+          transport=https
