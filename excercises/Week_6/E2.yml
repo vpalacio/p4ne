@@ -1,0 +1,21 @@
+---
+
+- name: configure ethernet interfaces
+  hosts: arista
+
+  tasks:
+  - name: configure description on primary interface
+    eos_interface: name=Ethernet6 description='*** IN USE ***'
+          username={{ eapi_username }}
+          host={{ eapi_hostname }}
+          password={{ eapi_password }}
+          port={{ eapi_port }}
+          transport=https
+
+  - name: configure switchport properties on primary interface
+    eos_switchport: name=Ethernet6 mode=access access_vlan=789 
+          username={{ eapi_username }}
+          host={{ eapi_hostname }}
+          password={{ eapi_password }}
+          port={{ eapi_port }}
+          transport=https
