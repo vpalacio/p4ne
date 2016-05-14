@@ -1,0 +1,33 @@
+---
+
+- name: cleanup
+  hosts: arista
+
+  tasks:
+    - name: cleanup what I did in E2
+      eos_interface: name=Ethernet6 description=''
+          username={{ eapi_username }}
+          host={{ eapi_hostname }}
+          password={{ eapi_password }}
+          port={{ eapi_port }}
+          transport=https
+
+    - name: cleanup switchport config
+      eos_switchport: name=Ethernet6 mode=access access_vlan=1 trunk_allowed_vlans=1-4094
+          username={{ eapi_username }}
+          host={{ eapi_hostname }}
+          password={{ eapi_password }}
+          port={{ eapi_port }}
+          transport=https
+
+    - name: remove vlans
+      eos_vlan: name={{ item.vlan_name }} vlanid={{ item.vlanid }} state=absent
+          username={{ eapi_username }}
+          host={{ eapi_hostname }}
+          password={{ eapi_password }}
+          port={{ eapi_port }}
+          transport=https
+      with_items: 
+          - {vlan_name: RED, vlanid: 567}
+          - {vlan_name: WHITE, vlanid:  678}
+          - {vlan_name: BLUE, vlanid : 789}
