@@ -37,8 +37,8 @@ def main():
    print "\n{:20} {:<20} {:<20}".format("Interface", "In Octets", "Out Octets")
 
    for i in interfaces.keys():
-      int = interfaces.get(i)
-      int_c = int.get('interfaceCounters', {})
+      list_of_interfaces = interfaces.get(i)
+      int_c = list_of_interfaces.get('interfaceCounters', {})
       inOct = int_c.get('inOctets')
       ouOct = int_c.get('outOctets')
       print "{:20} {:<20} {:<20}".format(i, inOct, ouOct)
