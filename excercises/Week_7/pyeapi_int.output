@@ -1,0 +1,13 @@
+(applied_python)[vpalacio@ip-172-30-0-38 Week_7]$ python pyeapi_int.py 
+
+Interface            In Octets            Out Octets          
+Management1          0                    0                   
+Ethernet2            61059560             2670931             
+Ethernet3            61064484             2666007             
+Ethernet1            57170890             6559740             
+Ethernet6            61065099             2665392             
+Ethernet7            61056662             2673473             
+Ethernet4            61064976             2665515             
+Ethernet5            61064976             2665515             
+Vlan1                None                 None                
+
